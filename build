@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+packer validate packer/
+packer build packer/
+
+terraform init
+terraform plan
+terraform apply --auto-approve
